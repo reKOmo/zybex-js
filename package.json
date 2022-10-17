@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config rollup.config.js",
-    "watch": "rollup --config rollup.config.js -w"
+    "watch": "rollup --config rollup.config.js -w",
+    "run": "echo Use Live Server"
   },
   "author": "",
   "license": "ISC",

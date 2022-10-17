@@ -21,7 +21,7 @@ export class MainMEnuController extends ScriptComponent {
     onInit = () => {
         this.sprite = this.entity.getComponent(RendnerComponent.type) as SpriteComponent;
         if (!Runtime.GlobalStorage.has("scores"))
-            Runtime.GlobalStorage.set("scores", [{ name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }])
+            Runtime.GlobalStorage.set("scores", [{ name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }])
     };
     onTick = () => {
         this.ticks++;

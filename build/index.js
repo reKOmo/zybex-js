@@ -2550,10 +2550,10 @@ var GunManager = /** @class */ (function (_super) {
     __extends(GunManager, _super);
     function GunManager() {
         var _this = _super.call(this, "gunmanager") || this;
-        _this.gunLevels = [1, 1, 1, 1];
+        _this.gunLevels = [1, 0, 0, 0];
         _this.selectedGun = 0;
         _this.gunArr = [];
-        _this.enabledGuns = [true, true, true, true];
+        _this.enabledGuns = [true, false, false, false];
         _this.gunchanged = false;
         _this.onInit = function () {
             //createGuns
@@ -3252,7 +3252,7 @@ var MainMEnuController = /** @class */ (function (_super) {
         _this.onInit = function () {
             _this.sprite = _this.entity.getComponent(RendnerComponent.type);
             if (!Runtime.GlobalStorage.has("scores"))
-                Runtime.GlobalStorage.set("scores", [{ name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }, { name: "aaa", score: 123 }]);
+                Runtime.GlobalStorage.set("scores", [{ name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }, { name: "---", score: 0 }]);
         };
         _this.onTick = function () {
             var _a, _b;
@@ -3365,13 +3365,26 @@ link.setAttribute('rel', 'stylesheet');
 link.setAttribute('type', 'text/css');
 link.setAttribute('href', '/assets/font/a.ttf');
 document.head.appendChild(link);
-start();
 function start() {
+    document.body.style.backgroundColor = "#181F1C";
+    var cont = document.createElement("div");
+    cont.style.width = "100%";
+    cont.style.display = "flex";
+    cont.style.justifyContent = "center";
+    cont.style.alignItems = "center";
+    cont.style.flexDirection = "column";
+    document.body.appendChild(cont);
+    //setup game screen
     var a = document.createElement("div");
     a.focus();
     a.style.width = (200 * 4) + 'px';
     // a.style.height = (160 * 4) + 'px';
-    document.body.appendChild(a);
+    cont.appendChild(a);
+    //setup instructions
+    var instructions = document.createElement("p");
+    instructions.style.color = "white";
+    instructions.innerText = "Controls:\nSpace/Control - accept\nArrows/AWSD - move";
+    cont.appendChild(instructions);
     var p = new Project();
     p.rootElement = a;
     p.tps = 60;
@@ -3454,3 +3467,4 @@ function start() {
     main.load();
     main.start();
 }
+start();

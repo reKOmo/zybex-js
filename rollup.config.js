@@ -7,5 +7,5 @@ export default {
     dir: 'build',
     format: 'es'
   },
-  plugins: [typescript({ tsconfig: "./tsconfig.json" }), html({ title: "Końcowy", attributes: { script: { defer: true } } })]
+  plugins: [typescript({ tsconfig: "./tsconfig.json" }), html({ title: "Zybex - projekt końcowy", attributes: { script: { defer: true } } })]
 };

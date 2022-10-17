@@ -21,10 +21,10 @@ export class GunManager extends ScriptComponent {
     private railGun: Gun | undefined;
     private pulseGun: Gun | undefined;
     private ewGun: Gun | undefined;
-    public gunLevels: number[] = [1, 1, 1, 1]
+    public gunLevels: number[] = [1, 0, 0, 0]
     public selectedGun: number = 0;
     private gunArr: (Gun | undefined | AutoGun)[] = []
-    public enabledGuns: boolean[] = [true, true, true, true]
+    public enabledGuns: boolean[] = [true, false, false, false]
     private gunchanged: boolean = false;
     onInit = () => {
         //createGuns

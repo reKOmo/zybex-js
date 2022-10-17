@@ -16,14 +16,30 @@ link.setAttribute('type', 'text/css');
 link.setAttribute('href', '/assets/font/a.ttf');
 document.head.appendChild(link);
 
-start()
-
 function start() {
+
+    document.body.style.backgroundColor = "#181F1C";
+
+    const cont = document.createElement("div");
+    cont.style.width = "100%";
+    cont.style.display = "flex";
+    cont.style.justifyContent = "center";
+    cont.style.alignItems = "center"
+    cont.style.flexDirection = "column";
+    document.body.appendChild(cont);
+
+    //setup game screen
     const a = document.createElement("div");
     a.focus()
     a.style.width = (200 * 4) + 'px';
     // a.style.height = (160 * 4) + 'px';
-    document.body.appendChild(a);
+    cont.appendChild(a);
+
+    //setup instructions
+    const instructions = document.createElement("p");
+    instructions.style.color = "white";
+    instructions.innerText = "Controls:\nSpace/Control - accept\nArrows/AWSD - move"
+    cont.appendChild(instructions);
 
     const p = new Project()
     p.rootElement = a
@@ -132,3 +148,5 @@ function start() {
     main.start();
 
 }
+
+start();
