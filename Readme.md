@@ -1,3 +1,5 @@
+# Play at: [zybex.rekomo.me](https://zybex.rekomo.me)
+
 # Implementation of the game Zybex
 
 Made with Typescript and a custom game engine framework for HTMLCanvas grahpics.
